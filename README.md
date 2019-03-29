@@ -1,11 +1,11 @@
-#Spring Required Property Loading Sample
+# Spring Required Property Loading Sample
 
-##Purpose
+## Purpose
 The purpose of this repo is to demonstrate how to force SpringBoot to short-circuit loading when a specified property 
 is unavailable.  This technique is useful when you want to keep an application from starting if it does not have a 
 certain set of configuration.
 
-##Relevant Configuration Details
+## Relevant Configuration Details
 Refer to comments in `SampleConfiguration.java` to understand which property is required for the application to load:
 
 ```java
@@ -32,7 +32,7 @@ Notice that the property `message.default.sample` exists only in the files `appl
 `application-test.yml`. This means that in the way this application is setup currently it will only load if the 
 `local` or `test` Spring profile is active.
 
-##How To Use This Repo To Demo
+## How To Use This Repo To Demo
 * Check out the source code:
 ```bash
 $ git clone https://github.com/bthelen/spring-property-load.git 
@@ -53,7 +53,7 @@ $ mvn spring-boot:run -DskipTests -Dspring.profiles.active=local
 $ curl localhost:8080/actuator/env
 ```
 
-##How to use This Repo To Show Spring Cloud Config Server Integration on Pivotal Cloud Foundry
+## How to use This Repo To Show Spring Cloud Config Server Integration on Pivotal Cloud Foundry
 * Make sure you are logged on to a foundation where you have access to `cf push` and you have the ability to 
 `cf create-service` an instance of Spring Cloud Config Server.
 - Create a config server instance pointing to a [sample git repo](https://github.com/bthelen/spring-config-repo) that includes `message.default.sample` in 
